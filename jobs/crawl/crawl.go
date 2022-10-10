@@ -18,8 +18,13 @@ func crawl() {
 	if inDb.Address != "" {
 		return
 	}
-	status := http.Request(address)
-	db.Client.Create(&models.Ip{Address: address, Status: status, CheckedAt: time.Now()})
+	status, statusCode := http.Request(address)
+	db.Client.Create(&models.Ip{
+		Address:    address,
+		Status:     status,
+		CheckedAt:  time.Now(),
+		StatusCode: statusCode,
+	})
 }
 
 func Run() {
