@@ -1,7 +1,10 @@
 package ip
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+)
 
-func Generate(i, j, k, l int) string {
-	return fmt.Sprint(i) + "." + fmt.Sprint(j) + "." + fmt.Sprint(k) + "." + fmt.Sprint(l)
+func GetRandom() string {
+	return fmt.Sprintf("%d.%d.%d.%d", rand.Intn(256), rand.Intn(256), rand.Intn(256), rand.Intn(256))
 }
