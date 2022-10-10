@@ -1,3 +1,4 @@
 local.db
 .vscode/
 .env
+__debug_bin
