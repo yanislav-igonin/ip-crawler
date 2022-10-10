@@ -4,7 +4,7 @@ import "time"
 
 type Ip struct {
 	Address    string    `gorm:"primaryKey"`
-	CheckedAt  time.Time `gorm:"column:checkedAt" sql:"DEFAULT:'current_timestamp'"`
-	Status     string    `gorm:"index"`
-	StatusCode int       `gorm:"column:statusCode; index"`
+	CheckedAt  time.Time `gorm:"column:checkedAt; not null"`
+	Status     string    `gorm:"index; not null"`
+	StatusCode int       `gorm:"column:statusCode; index; not null"`
 }
