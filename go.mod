@@ -3,6 +3,7 @@ module ip-crawler
 go 1.18
 
 require (
+	github.com/robfig/cron v1.2.0
 	gorm.io/driver/sqlite v1.4.2
 	gorm.io/gorm v1.24.0
 )
