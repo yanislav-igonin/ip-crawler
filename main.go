@@ -17,5 +17,11 @@ func main() {
 	db.AutoMigrate(&models.Ip{})
 
 	address := ip.GetRandom()
-	http.Request(address)
+	var inDb models.Ip
+	db.First(&inDb, "address = ?", address)
+	if inDb.Address != "" {
+		return
+	}
+	status := http.Request(address)
+	db.Create(&models.Ip{Address: address, Status: status})
 }
