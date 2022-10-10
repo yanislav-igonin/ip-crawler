@@ -3,6 +3,8 @@ version: "3.7"
 services:
   app:
     image: ghcr.io/yanislav-igonin/ip-crawler/ip-crawler:latest
+    networks:
+      - web
     environment: 
       DATABASE_URL: ${DATABASE_URL}
     deploy:
@@ -15,3 +17,10 @@ services:
         delay: 10s
       restart_policy:
         condition: on-failure
+      labels:
+        traefik.enable: "true"
+
+networks:
+  web:
+    driver: overlay
+    external: true
