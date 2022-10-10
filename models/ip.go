@@ -1,14 +1,9 @@
 package models
 
-import (
-	"time"
-
-	"gorm.io/gorm"
-)
+import "time"
 
 type Ip struct {
-	gorm.Model
-	Address   string
-	CheckedAt time.Time
+	Address   string    `gorm:"primaryKey"`
+	CheckedAt time.Time `gorm:"column:checkedAt"`
 	Status    string
 }
