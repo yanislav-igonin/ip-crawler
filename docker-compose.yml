@@ -7,6 +7,7 @@ services:
       - web
     environment: 
       DATABASE_URL: ${DATABASE_URL}
+      REQUEST_INTERVAL_SECONDS: ${REQUEST_INTERVAL_SECONDS}
     deploy:
       mode: global
       placement:
