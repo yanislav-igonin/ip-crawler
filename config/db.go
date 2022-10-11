@@ -25,6 +25,6 @@ func getDbConfig() DbConfig {
 
 var Db DbConfig
 
-func Init() {
+func initDbConfig() {
 	Db = getDbConfig()
 }
