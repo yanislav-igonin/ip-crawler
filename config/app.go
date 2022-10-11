@@ -22,7 +22,7 @@ func getValueOrDefaultInt(value string, defaultValue int) int {
 }
 
 func getAppConfig() AppConfig {
-	RequestIntervalSeconds := getValueOrDefaultInt(os.Getenv("REQUEST_INTERVAL_SECONDS"), 1)
+	RequestIntervalSeconds := getValueOrDefaultInt(os.Getenv("REQUEST_INTERVAL_SECONDS"), 10)
 
 	return AppConfig{
 		RequestIntervalSeconds,
